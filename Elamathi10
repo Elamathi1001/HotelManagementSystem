@@ -1,11 +1,10 @@
 import java.util.Scanner;
-// Hotel class represents the hotel and its operations
 class Hotel {
     private Room[] rooms;
     public Hotel(String hotelName, Room[] rooms) {
         this.rooms = rooms;
     }
-    // Display available rooms in the hotel
+    
     public void displayAvailableRooms() {
         System.out.println("Available Rooms:");
         for (Room room : rooms) {
@@ -14,7 +13,6 @@ class Hotel {
             }
         }
     }
-    // Check-in a guest to a room
     public void checkIn() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter room number: ");
@@ -35,7 +33,6 @@ class Hotel {
             System.out.println("Room " + roomNumber + " does not exist.");
         }
     }
-    // Check-out a guest from a room
     public void checkOut() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter room number: ");
@@ -55,7 +52,7 @@ class Hotel {
             System.out.println("Room " + roomNumber + " does not exist.");
         }
     }
-    // Find a room by its number
+
     private Room findRoom(int roomNumber) {
         for (Room room : rooms) {
             if (room.getRoomNumber() == roomNumber) {
@@ -65,7 +62,7 @@ class Hotel {
         return null;
     }
 }
-// Room class represents a hotel room
+
 class Room {
     private int roomNumber;
     private String guestName;
@@ -95,7 +92,6 @@ class Room {
         return "Room " + roomNumber + ": " + (occupied ? "Occupied by " + guestName : "Available");
     }
 }
-// HotelManagementSystem class contains the main method to run the program
 public class HotelManagement {
     public static void main(String[] args) {
         // Create an array of rooms
